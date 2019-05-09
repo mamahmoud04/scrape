@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="buttonDiv">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Scraped Articles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/scrape">Scrape New Articles!</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/articles/saved">Saved Articles<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<h1>Saved Articles</h1>
+
+{{#each result}}
+
+<h3>
+    <a href={{this.link}}>{{this.title}}</a>
+</h3>
+{{this.summary}}
+<div class="comment-form">
+    <form class="create-form">
+
+        <div class="form-group">
+            <label for="note-form">Comment:</label>
+            <textarea id='input' name='body'></textarea>
+        </div>
+
+        <button id="save" type="submit">Save </button>
+        <button id="edit" type="text">Comment</button>
+        <button id="deleteComment" type="text">Delete</button>
+    </form>
+</div>
+</div>
+{{/each}}
+</div>
